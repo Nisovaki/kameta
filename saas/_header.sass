@@ -1,0 +1,21 @@
+.header
+  &-title
+    font-family: 'Cattedrale [RUS by penka220]', sans-serif
+    font-size: 50px
+    font-weight: bold
+    background: linear-gradient(350deg, #82c2de, #476bbd, #82c2de)
+    background-size: 300% 300%
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    animation: rainbow-text 10s ease infinite
+    text-align: end
+
+@keyframes rainbow-text 
+  0% 
+    background-position: 0% 100% // Начальная позиция
+
+  50% 
+    background-position: 100% 0% // Промежуточная позиция (пик движения)
+
+  100% 
+    background-position: 0% 100% // Возврат в начальную позицию
