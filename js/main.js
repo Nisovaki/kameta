@@ -46,5 +46,38 @@ for (let i = 0; i < 100; i++) {
   createStar();
 }
 
-// Создаем метеориты каждые 2 секунды
-setInterval(createMeteor, 2000);
+// Создаем метеориты каждые 3 секунды
+setInterval(createMeteor, 3000);
+
+//-----
+// Функция для добавления изображений
+function addImagesToElements() {
+  // Находим все элементы <b> с атрибутом data-myinfo="streamname"
+  const elements = document.querySelectorAll('b[data-myinfo="streamname"]');
+
+  elements.forEach((element) => {
+    // Проверяем текст внутри элемента
+    if (element.textContent === "Auto-DJ") {
+      // Создаем изображение для Auto-Dj
+      const img = document.createElement("img");
+      img.src = "../img/dj.png"; // URL изображения
+      img.alt = "Auto-DJ Image";
+      img.classList.add("auto-dj-image"); // Добавляем класс
+
+      // Вставляем изображение после элемента <b>
+      element.insertAdjacentElement("afterend", img);
+    } else if (element.textContent === "Dj") {
+      // Создаем изображение для Dj
+      const img = document.createElement("img");
+      img.src = "https://via.placeholder.com/40"; // URL изображения
+      img.alt = "Dj Image";
+      img.classList.add("dj-image"); // Добавляем класс
+
+      // Вставляем изображение после элемента <b>
+      element.insertAdjacentElement("afterend", img);
+    }
+  });
+}
+
+// Вызываем функцию после загрузки DOM
+document.addEventListener("DOMContentLoaded", addImagesToElements);

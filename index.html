@@ -4,20 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Радио Комета</title>
+    <title>Radio Kometa</title>
   </head>
   <body>
+    <!-- Контейнер для анимации космоса -->
+    <div id="space"></div>
+
     <header class="header">
       <div class="container">
-        <h1 class="header-title">Радио Комета</h1>
+        <h1 class="header-title">Radio Kometa</h1>
 
-        <div class="header-block"></div>
+        <div class="header-block">
+          <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+          <div
+            id="my_player"
+            class="my_player header-play"
+            data-player="energy"
+            data-skin="blue"
+            data-width="200"
+            data-autoplay="0"
+            data-volume="70"
+            data-streamurl="https://myradio24.org/8414"
+          ></div>
+          <!--data-autoplay="1" -->
+          <!--END PLAYER-->
 
-        <!-- Контейнер для анимации космоса -->
-        <div id="space"></div>
+          <!--INFOS - Информация о радио -->
+          <!-- <div
+            data-myinfo="logo"
+            style="width: 300px; height: 80px; background-size: cover"
+          ></div> -->
+
+          <h2 class="header-subtitle">Cometa Metall</h2>
+          <div
+            data-myinfo="img"
+            style="width: 200px; height: 200px; background-size: cover"
+          ></div>
+          <br />
+          <b style="text-align: center;" data-myinfo="song"></b><br />
+
+          <div class="header-play__block-text">
+            <br />
+            🎧 <b data-myinfo="listeners"></b>
+            <span data-myinfo="isonline"></span> -
+            <span data-myinfo="kbps"></span> kbps
+          </div>
+
+          <p class="header-text">Слушать на Windows</p>
+          <a href="https://myradio24.org/8414.m3u" target="_blank"
+            ><img src="https://myradio24.com/img/wmp.gif"
+          /></a>
+
+          <p class="header-text">Открыть в отдельном окне</p>
+          <a
+            href="https://myradio24.com/ru/player/8414"
+            onclick="window.open(this.href,'player','width=300,height=30'); return false;"
+            ><img src="https://myradio24.com/img/open.gif"
+          /></a>
+
+          <br />
+
+          <p class="header-text">Сейчас в эфире:</p>
+          <b data-myinfo="streamname"></b><br />
+          <!--END INFOS-->
+        </div>
       </div>
     </header>
 
-  <script src="js/main.js"></script>
+    <div class="info">
+      <div class="container">
+        <div class="info-block"></div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+    <script
+      src="https://myradio24.com/player/player.js?v3.31"
+      data-radio="8414"
+      data-interval="15"
+      data-vmid="0"
+      data-lang="ru"
+    ></script>
   </body>
 </html>
